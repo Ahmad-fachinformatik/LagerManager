@@ -1,6 +1,6 @@
-const testButton = document.getElementById("testButton");
-const message = document.getElementById("message");
+const loadArticlesButton = document.getElementById("loadArticlesButton");
+const articlesResult = document.getElementById("articlesResult");
 
-testButton.addEventListener("click", function () {
-  message.textContent = "Frontend funktioniert!";
+loadArticlesButton.addEventListener("click", function () {
+  articlesResult.textContent = "Artikel werden später vom Backend geladen.";
 });

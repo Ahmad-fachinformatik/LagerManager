@@ -6,15 +6,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
     <h1>LagerManager</h1>
+    <p>Lager-und Inventarverwaltung</p>
+    </header>    
+    
+    <main>
+        <section class="dashboard">
+            <h2>Dashboard</h2>
 
-    <p>Willkommen im LagerManager</p>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Gesamtartikel</h3>
+                    <p id="totalArticles">0</p>
+                </div>
 
-    <button id="testButton">
-        Test Button
-    </button>
+                <div class="card">
+                    <h3>Kritische Bestände</h3>
+                    <p id="criticalArticles">0</p>
+                </div>
+            </div>
+        </section>
 
-    <p id="message"></p>
+        <section class="articles-section">
+            <h2>Artikelverwaltung</h2>
+
+            <button id="loadArticlesButton">
+                Artikel Laden
+            </button>
+
+            <div id="articlesResult">
+                Hier erscheinen später die Artikel.
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>   
