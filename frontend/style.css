@@ -65,3 +65,15 @@ button {
   background-color: #f7f7f7;
   border-radius: 6px;
 }
+
+.article-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.article-card p {
+  margin: 6px 0;
+}
