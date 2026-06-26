@@ -33,19 +33,36 @@ const articles = [
 ];
 
 loadArticlesButton.addEventListener("click", function () {
-  let output = "";
+  let output = `
+    <table class="articles-table">
+        <thead>
+            <tr>
+                <th>Artikelnummer</th>
+                <th>Name</th>
+                <th>Kategorie</th>
+                <th>Bestand</th>
+                <th>Lagerort</th>
+            </tr>
+        </thead>
+        <tbody>
+  `;
 
   articles.forEach(function (article) {
     output += `
-      <div class="article-card">
-        <p><strong>Artikelnummer:</strong> ${article.artikelnummer}</p>
-        <p><strong>Name:</strong> ${article.name}</p>
-        <p><strong>Kategorie:</strong> ${article.kategorie}</p>
-        <p><strong>Bestand:</strong> ${article.bestand}</p>
-        <p><strong>Lagerort:</strong> ${article.lagerort}</p>
-      </div>
+        <tr>
+            <td>${article.artikelnummer}</td>
+            <td>${article.name}</td>
+            <td>${article.kategorie}</td>
+            <td>${article.bestand}</td>
+            <td>${article.lagerort}</td>
+        </tr>
     `;
   });
+
+  output += `
+        </tbody>
+    </table>
+  `;
 
   articlesResult.innerHTML = output;
 });

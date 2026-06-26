@@ -1,0 +1,189 @@
+# Lesson 05 - Artikelliste als Tabelle
+
+Tags: #lager-manager #pflichtenheft #frontend #javascript #html #css #table #foreach
+
+## Ziel der Lektion
+
+In dieser Lektion wurde die Artikelliste aus dem Frontend als Tabelle dargestellt.
+
+Das Ziel war, eine Anforderung aus dem Pflichtenheft besser passend in der Benutzeroberfläche umzusetzen.
+
+## Anforderung aus dem Pflichtenheft
+
+Die Anwendung soll eine Bestandsübersicht anzeigen.
+
+Folgende Daten sollen pro Artikel angezeigt werden:
+
+* Artikelnummer
+* Name
+* Kategorie
+* Bestand
+* Lagerort
+
+## Ableitung aus der Anforderung
+
+Da die Daten eine feste Struktur mit mehreren Spalten haben, eignet sich eine HTML-Tabelle besser als einzelne Karten.
+
+Eine Tabelle macht die Bestandsübersicht übersichtlicher und leichter vergleichbar.
+
+## Was wurde gemacht?
+
+* Die Artikeldaten wurden weiterhin als Array von Objects gespeichert.
+* Die Ausgabe wurde von Cards auf eine Tabelle umgestellt.
+* Für jeden Artikel wurde mit `forEach` eine Tabellenzeile erzeugt.
+* Die Tabelle wurde mit CSS formatiert.
+* Die Ausgabe erfolgt weiterhin dynamisch über `innerHTML`.
+
+## Wichtige Begriffe
+
+* [[Pflichtenheft]]
+* [[Bestandsübersicht]]
+* [[HTML Table]]
+* [[JavaScript]]
+* [[Array]]
+* [[Object]]
+* [[forEach]]
+* [[innerHTML]]
+* [[CSS]]
+
+## Datenstruktur
+
+Ein Artikel wird als Object gespeichert.
+
+```javascript
+{
+  artikelnummer: "A-1001",
+  name: "Tastatur",
+  kategorie: "Hardware",
+  bestand: 12,
+  lagerort: "Regal A1"
+}
+```
+
+Mehrere Artikel werden in einem Array gespeichert.
+
+## Wichtiger JavaScript-Code
+
+```javascript
+let output = `
+  <table class="articles-table">
+    <thead>
+      <tr>
+        <th>Artikelnummer</th>
+        <th>Name</th>
+        <th>Kategorie</th>
+        <th>Bestand</th>
+        <th>Lagerort</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+articles.forEach(function (article) {
+  output += `
+    <tr>
+      <td>${article.artikelnummer}</td>
+      <td>${article.name}</td>
+      <td>${article.kategorie}</td>
+      <td>${article.bestand}</td>
+      <td>${article.lagerort}</td>
+    </tr>
+  `;
+});
+
+output += `
+    </tbody>
+  </table>
+`;
+
+articlesResult.innerHTML = output;
+```
+
+## Wichtiger CSS-Code
+
+```css
+.articles-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: white;
+}
+
+.articles-table th,
+.articles-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.articles-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.articles-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+```
+
+## Kurze Erklärung
+
+Die Artikeldaten werden zuerst in JavaScript gespeichert.
+
+Beim Klick auf den Button wird eine HTML-Tabelle als String aufgebaut.
+Die Tabellenüberschrift wird einmal erstellt.
+Danach erzeugt `forEach` für jeden Artikel eine neue Tabellenzeile.
+Am Ende wird die fertige Tabelle mit `innerHTML` in die Webseite eingefügt.
+
+## Warum Tabelle statt Cards?
+
+Eine Tabelle ist für strukturierte Daten besser geeignet.
+
+Bei Artikeldaten können die Werte direkt miteinander verglichen werden, zum Beispiel Bestand oder Lagerort.
+
+## Merksatz
+
+Wenn Daten feste Spalten und mehrere Zeilen haben, ist eine Tabelle oft die passende Darstellung.
+
+## Typische Prüfungsfragen
+
+### Frage 1
+
+Warum eignet sich eine Tabelle für eine Bestandsübersicht?
+
+### Antwort
+
+Eine Tabelle eignet sich, weil die Daten eine feste Struktur mit mehreren Spalten und Zeilen haben.
+
+### Frage 2
+
+Was ist der Unterschied zwischen `th` und `td`?
+
+### Antwort
+
+`th` wird für Tabellenüberschriften verwendet.
+`td` wird für normale Tabellenzellen verwendet.
+
+### Frage 3
+
+Warum wird `forEach` verwendet?
+
+### Antwort
+
+`forEach` wird verwendet, um für jeden Artikel im Array eine Tabellenzeile zu erzeugen.
+
+### Frage 4
+
+Warum verwenden wir `innerHTML`?
+
+### Antwort
+
+`innerHTML` wird verwendet, weil HTML-Code dynamisch in die Webseite eingefügt wird.
+
+## Eigene Notizen
+
+*
+
+## Offene Fragen
+
+*
